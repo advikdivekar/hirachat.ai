@@ -1,8 +1,8 @@
 # HiRa AI Agent — Complete Technical Design Document
-### Python FastAPI Rewrite | SDE-5 Level Architecture
+### Python FastAPI Rewrite 
 **Version:** 1.0  
 **Date:** 2026-06-05  
-**Author:** Principal Software Architect  
+**Author:** Advik Divekar
 **Status:** Pre-Implementation — Pending Sign-Off  
 
 ---
@@ -271,9 +271,6 @@ The system is **intent-driven**: booking, complaints, maintenance, family manage
 | [A-07] | The frontend does not need any changes; JSON contract is fully backward compatible |
 | [A-08] | Deployment is to a Linux container environment (Docker / Kubernetes) |
 
-**[OPEN QUESTION] OQ-01:** How is the Bearer JWT validated? Options: (a) call `hcomm.in/auth/verify` endpoint, (b) shared HMAC secret, (c) RSA public key JWKS endpoint. *Recommend option (c) for zero-coupling.*
-
-**[OPEN QUESTION] OQ-02:** Is the amenity catalogue to be moved to the DB in this sprint or a follow-up?
 
 ---
 
@@ -2086,6 +2083,6 @@ Before the first `.py` file is written, every item below must be confirmed compl
 
 ---
 
-*Document produced by: Principal Software Architect*  
-*Review required from: Engineering Lead, Security, Product*  
+*Document produced by: Advik Divekar*  
+*Review required from: Advik Divekar*  
 *Sign-off required before: First pull request to `main` is merged*
