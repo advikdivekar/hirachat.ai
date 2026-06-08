@@ -46,30 +46,6 @@ The current system is built in PHP. Before we rewrite it in Python (FastAPI), th
 - The new system avoids all the critical security and reliability issues found in the audit
 - Any engineer in the world can pick this up and contribute on day one
 
-## Why Rewrite in Python FastAPI?
-
-| Dimension | Current PHP | New Python FastAPI |
-|---|---|---|
-| **Concurrency** | Blocking — one DB call holds the thread | Async — all DB/API calls run concurrently |
-| **Type Safety** | None — runtime bugs from untyped params | Full Pydantic validation — bugs caught at startup |
-| **AI SDK** | Third-party PHP OpenAI client | Official Python SDK, async-native, always up to date |
-| **Authentication** | ❌ None — any user can impersonate another | ✅ Bearer JWT validated server-side on every request |
-| **Rate Limiting** | ❌ None | ✅ Redis-backed, per-user and per-IP |
-| **Error Handling** | Exception messages leak to clients | Structured error taxonomy, internals never exposed |
-| **Observability** | Basic DB logging only | Structured JSON logs + trace IDs on every request |
-| **Test Coverage** | 0% | Unit + integration test suite from day one |
-
-## What the Frontend Sees
-
-**Nothing changes.** The JSON response contract is identical. The frontend continues sending:
-```json
-{ "code": "HC2526Y61", "message": "Book badminton tomorrow", "selection": null }
-```
-And receiving:
-```json
-{ "success": true, "data": { "message": "...", "cards": [...], "ui": {} } }
-```
-The rewrite is a pure backend swap. No frontend work required.
 
 ## Timeline Estimate
 
